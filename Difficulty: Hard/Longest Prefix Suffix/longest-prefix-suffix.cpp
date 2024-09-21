@@ -7,43 +7,35 @@ using namespace std;
 
 // } Driver Code Ends
 
-//User function template for C++
+// User function template for C++
 
-class Solution{
-  public:		
-	int lps(string s) 
-	{
-	    // Your code goes here
-	    vector<int>lps(s.size(),0);
-	    int pre=0,suf=1;
-	    
-	    while(suf<s.size())
-	    {
-	       // match 
-	       if(s[pre]==s[suf])
-	       {
-	           lps[suf]=pre+1;
-	           suf++;
-	           pre++;
-	       }
-	       //not matched
-	       else
-	       {
-	           if(pre==0)
-	           {
-	               lps[suf]=0;
-	               suf++;
-	           }
-	           else
-	           {
-	               pre=lps[pre-1];
-	           }
-	       }
-	    };
-	    return lps[s.size()-1];
-	}
+class Solution {
+  public:
+    int lps(string str) {
+        // Your code goes here
+        int n = str.size();
+        vector<int> lps_array(n, 0);
+
+        int length = 0;
+        int i = 1;
+
+        while (i < n) {
+            if (str[i] == str[length]) {
+                length++;
+                lps_array[i] = length;
+                i++;
+            } else {
+                if (length != 0) {
+                    length = lps_array[length - 1];
+                } else {
+                    lps_array[i] = 0;
+                    i++;
+                }
+            }
+        }
+        return lps_array[n - 1];
+    }
 };
-
 
 //{ Driver Code Starts.
 
