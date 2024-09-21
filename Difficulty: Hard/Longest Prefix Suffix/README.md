@@ -1,4 +1,4 @@
-<h2><a href="https://www.geeksforgeeks.org/problems/longest-prefix-suffix2527/0">Longest Prefix Suffix</a></h2><h3>Difficulty Level : Difficulty: Hard</h3><hr><div class="problems_problem_content__Xm_eO"><p><span style="font-size: 18px;">Given a string of characters, find the length of the longest proper prefix which is also a proper suffix.</span></p>
+<h2><a href="https://www.geeksforgeeks.org/problems/longest-prefix-suffix2527/1">Longest Prefix Suffix</a></h2><h3>Difficulty Level : Difficulty: Hard</h3><hr><div class="problems_problem_content__Xm_eO"><p><span style="font-size: 18px;">Given a string of characters, find the length of the longest proper prefix which is also a proper suffix.</span></p>
 <p><span style="font-size: 18px;"><strong>NOTE:</strong> Prefix and suffix can be overlapping but they should not be equal to the entire string.</span></p>
 <p><strong><span style="font-size: 18px;">Examples :</span></strong></p>
 <pre><span style="font-size: 18px;"><strong>Input:</strong> str = "abab"</span>
