@@ -11,28 +11,20 @@ using namespace std;
 class Solution {
   public:
     int countZeroes(vector<int> &arr) {
-        int n = arr.size();
-        int start = 0, end = n - 1;
+        int n =  arr.size();
+        int start=0, end = n - 1;
+        int FirstIndex=-1;
         
-        // Binary search to find the first occurrence of 0
-        while (start <= end) {
-            int mid = start + (end - start) / 2;
-            
-            // If mid is 0 and it's the first occurrence
-            if (arr[mid] == 0 && (mid == 0 || arr[mid - 1] == 1)) {
-                return n - mid;  // Return the count of zeros
-            }
-            // If the middle element is 1, search to the right
-            else if (arr[mid] == 1) {
-                start = mid + 1;
-            }
-            // If the middle element is 0, but not the first occurrence
-            else {
-                end = mid - 1;
-            }
+        // Binary search
+        while(start <= end){
+            int mid =start + (end-start)/2;
+            // Mid zero the first count
+            if(arr[mid]==0 && (mid == 0 || arr[mid-1]==1))
+            return n-mid;
+            else if (arr[mid]==1)
+            start=mid+1;
+            else end = mid-1;
         }
-        
-        return 0;  // If no zeros are found
     }
 };
 
