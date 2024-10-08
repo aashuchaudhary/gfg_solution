@@ -9,20 +9,19 @@ using namespace std;
 class Solution {
   public:
     int pairsum(vector<int> &arr) {
-        // Initialize the first and second maximums
+       
     int first_max = INT_MIN, second_max = INT_MIN;
 
-    // Traverse the array to find the two largest elements
-    for (int num : arr) {
-        if (num > first_max) {
-            second_max = first_max;  // Update second_max
-            first_max = num;         // Update first_max
-        } else if (num > second_max) {
-            second_max = num;        // Update second_max if it's smaller than first_max but larger than second_max
-        }
+    
+    for (int i= 0; i< arr.size(); i++) {
+        if (arr[i]> first_max) {
+            second_max = first_max;  //update second
+            first_max = arr [i];      //  update first
+        } else if (arr[i] > second_max) {
+            second_max = arr[i];      //upadte second   
     }
-
-    // Return the sum of the two largest numbers
+}
+  
     return first_max + second_max;
     }
 };
