@@ -8,18 +8,26 @@ using namespace std;
 class Solution {
   public:
     int countgroup(vector<int>& arr) {
-        int mod=1e9+7;
-        int xr = 0;
-        int n = arr.size();
-        for(int i = 0;i<arr.size();i++){
-            xr^=arr[i];
+         int n = arr.size();
+        int mod = 1e9 + 7;
+
+        // Calculate XOR of all elements
+        int xorSum = 0;
+        for (int num : arr) {
+            xorSum ^= num;
         }
-        if(xr!=0) return 0;
-        int ans = 1;
-        for(int i = 0;i <n-1;i++){
-            ans=(ans*2)%mod;
+
+        // If XOR is not zero, return 0 (no valid groups possible)
+        if (xorSum != 0) return 0;
+
+        // Calculate 2^(n-1) % mod
+        long long result = 1;
+        for (int i = 0; i < n - 1; i++) {
+            result = (result * 2) % mod;
         }
-        return ans - 1;
+
+        // Subtract 1 and return the result
+        return (result - 1 + mod) % mod;
     }
 };
 
